@@ -1,0 +1,18 @@
+# Obsidian workspace state (per-user, not shared)
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/cache
+.obsidian/graph.json
+
+# OS-level
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor temp files
+*.swp
+*.swo
+*~
+
+# Bootstrap sources — uncomment if you want to keep them out of git after bootstrap
+# bootstrap-sources/
