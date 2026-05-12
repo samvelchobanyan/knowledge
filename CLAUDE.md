@@ -165,7 +165,7 @@ Bootstrap is a one-time operation that initializes the wiki from existing materi
    - `specs/` — architecture/domain/data/screens specifications from projects (**mostly current but may lag refactorings**)
    - `discussions/` — selected conversation transcripts (**hypotheses, verify against code**)
 
-2. **Confirm access to project code.** Bootstrap requires read access to the actual project code (e.g. `C:\flutter-projects\go_sport\`). If you do not have this access, halt and ask the human to provide it. Without access to code, you cannot verify claims, and the resulting wiki will describe intentions instead of reality.
+2. **Confirm access to project code.** Bootstrap requires read access to the actual project code. The path to the project is provided by the human at the start of the operation (e.g., "project: `C:\flutter-projects\go_sport\`"). Do not assume any hardcoded path. If the human did not provide a path, ask before proceeding. Without access to code, you cannot verify claims, and the resulting wiki will describe intentions instead of reality.
 
 3. **Extract claim list.** From the source materials, extract a list of candidate claims grouped by topic. Each claim should be specific enough to verify: "Player uses three-layer Notifier/Handler/Service architecture" is verifiable; "Player is well-structured" is not.
 
@@ -222,7 +222,7 @@ Ingest is the routine operation of adding new knowledge to the wiki. Triggered b
    - Principle candidate (rare; usually emerges through pattern accumulation)
    - Routine application of existing knowledge (no new page; possibly an update to existing page)
 
-3. **Verify against code if applicable.** For claims that can be checked against project code, do so before writing the page.
+3. **Verify against code if applicable.** For claims that can be checked against project code, do so before writing the page. The path to the project code is provided by the human at the start of the operation; do not assume a hardcoded path. If verification is needed but no path was provided, ask before proceeding.
 
 4. **For each candidate, check existence in the wiki.** Read `index.md` first to find related pages. If a closely matching page exists:
    - If the new material is a refinement or addition → update the existing page
@@ -245,7 +245,7 @@ Re-ingest updates existing wiki pages when their underlying source material has 
 
 1. **Identify the scope.** The human specifies which area to re-ingest (e.g., "player architecture in go_sport changed").
 
-2. **Read the current state.** Examine the current code or source material the human points to.
+2. **Read the current state.** Examine the current code or source material the human points to. The path to the project code is provided by the human at the start of the operation (e.g., "project: `C:\flutter-projects\go_sport\`, focus on player module"). Do not assume a hardcoded path. If no path was provided, ask before proceeding.
 
 3. **Identify affected pages.** Find pages whose content references or describes the now-changed source. Use `index.md` and `code_refs` in frontmatter to locate them.
 
@@ -307,7 +307,7 @@ The human may directly request a specific page to be created (e.g., "create a pa
    - Whether cross-project or project-scoped
    - The source material (if any) to base the page on
 
-2. **Verify against code if applicable.** Apply the source-of-truth hierarchy from Section 1.
+2. **Verify against code if applicable.** Apply the source-of-truth hierarchy from Section 1. If verification against project code is needed, the path is provided by the human at the start of the operation. Do not assume a hardcoded path; ask if not provided.
 
 3. **Check existence.** Read `index.md` to see if a similar page exists. If so, surface this to the human before proceeding — they may want to update the existing page instead.
 
